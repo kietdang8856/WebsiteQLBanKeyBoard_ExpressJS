@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/public/assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+   <!-- Title  -->
+   <title>Kietcap - Dashboard</title>
+
+   <!-- Favicon  -->
+   <link rel="icon" href="/public/img/core-img/favicon.ico" />
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/admin/dashboard"><img class="logo-img" src="/public/img/core-img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<%= customer.avatar %> " alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <% fullName = customer.fullNameCustomer.firstName + " " + customer.fullNameCustomer.lastName %> 
+                                    <h5 class="mb-0 text-white nav-user-name"><%= fullName %> </h5>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="/admin/dashboard/logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu show">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="/admin/dashboard">Tổng quan</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/categories-manager">Quản lý danh mục</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/products-manager">Quản lý sản phẩm</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Quản lý đơn hàng</a>
+                                            <div id="submenu-1-2" class="collapse submenu show">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/admin/dashboard/pending-orders-manager">Chờ xác nhận</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/admin/dashboard/orders-manager">Tình trạng đơn hàng</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/users-manager">Quản lý người dùng</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title"> Tổng quan </h2>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Tổng quan</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+                        <div class="row">
+                            <!-- ============================================================== -->
+                            <!-- sales  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    <div class="card-body">
+                                        <% cost = 0 %> 
+                                        <% abc.forEach(e => {%>
+                                            <% e.listProduct.forEach(pro => {%>
+                                                <% cost += parseInt(pro.productPrice)  %> 
+                                            <%}) %> 
+                                        <%}) %> 
+                                        <h5 class="text-muted">Tổng doanh thu</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1"><%= cost.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,' ) %> đồng</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end sales  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- new customer  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Số sản phẩm</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1"><%= products.length %> </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end new customer  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- visitor  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Số đơn đặt hàng</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1"><%= abc.length %> </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end visitor  -->
+                            <!-- ============================================================== -->
+                            <!-- ============================================================== -->
+                            <!-- total orders  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    <div class="card-body">
+                                        <% cancel = 0 %> 
+                                        <% abc.forEach(e => {%>
+                                            <% e.status == "Đã hủy" ? cancel++ : "" %> 
+                                        <%}) %> 
+                                        <h5 class="text-muted">Số đơn bị hủy</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1"><%= cancel %> </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end total orders  -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <div class="row">
+                            <!-- ============================================================== -->
+                      
+                            <!-- ============================================================== -->
+
+                                          <!-- recent orders  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Đơn hàng gần đây</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">#</th>
+                                                        <th class="border-0">Mã đơn hàng</th>
+                                                        <th class="border-0">Tên khách hàng</th>
+                                                        <th class="border-0">Địa chỉ</th>
+                                                        <th class="border-0">Sản phẩm</th>
+                                                        <th class="border-0">Đơn giá</th>
+                                                        <th class="border-0">Trạng thái</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% j = 1; %> 
+                                                    <% if(abc.length > 5) {%>
+                                                        <% for(var i = abc.length - 5; i < abc.length; i++) {%>
+                                                            <tr>
+                                                                <td><%= j %> </td>
+                                                                <td><%= abc[i]._id %> </td>
+                                                                <td><%= abc[i].displayName.firstName + " " +  abc[i].displayName.lastName%> </td>
+                                                                <td><%= abc[i].address %></td>
+                                                                <td>
+                                                                    <% for(var j = 0; j < abc[i].listProduct.length; j++) {%>
+                                                                        <%= abc[i].listProduct[j].productName + " x " + abc[i].listProduct[j].amount %> <br>
+                                                                    <%} %> 
+                                                                 </td>
+                                                                 <% cost = 0 %> 
+                                                                 <% for(var j = 0; j < abc[i].listProduct.length; j++) {%>
+                                                                    <% cost += parseInt(abc[i].listProduct[j].productPrice) * abc[i].listProduct[j].amount %>
+                                                                <%} %> 
+                                                                <td><%= cost %> </td>
+                                                                <td><%= abc[i].status %> </td>
+                                                            </tr>
+                                                            <% j++ %> 
+                                                        <%} %> 
+                                                    <%} %> 
+                                                    <tr>
+                                                        <td colspan="9"><a href="/admin/dashboard/pending-orders-manager" class="btn btn-outline-light float-right">Xem chi tiết</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end recent orders  -->
+                        </div>
+                        <div class="row">
+                            <!-- ============================================================== -->
+              				                        <!-- product category  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header"> Product Category</h5>
+                                    <div class="card-body">
+                                        <div class="ct-chart-category ct-golden-section" style="height: 315px;"></div>
+                                        <div class="text-center m-t-40">
+                                            <span class="legend-item mr-3">
+                                                    <span class="fa-xs text-primary mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Man</span>
+                                            </span>
+                                            <span class="legend-item mr-3">
+                                                <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Woman</span>
+                                            </span>
+                                            <span class="legend-item mr-3">
+                                                <span class="fa-xs text-info mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Accessories</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end product category  -->
+                                   <!-- product sales  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <!-- <div class="float-right">
+                                                <select class="custom-select">
+                                                    <option selected>Today</option>
+                                                    <option value="1">Weekly</option>
+                                                    <option value="2">Monthly</option>
+                                                    <option value="3">Yearly</option>
+                                                </select>
+                                            </div> -->
+                                        <h5 class="mb-0"> Product Sales</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ct-chart-product ct-golden-section"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end product sales  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <!-- ============================================================== -->
+                                <!-- top perfomimg  -->
+                                <!-- ============================================================== -->
+                                <div class="card">
+                                    <h5 class="card-header">Top Sản Phẩm Bán Chạy</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table no-wrap p-table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Tên sản phẩm</th>
+                                                        <th class="border-0">Số lượng bán</th>
+                                                        <th class="border-0">Doanh thu</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Campaign#1</td>
+                                                        <td>98,789 </td>
+                                                        <td>$4563</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Campaign#2</td>
+                                                        <td>2,789 </td>
+                                                        <td>$325</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Campaign#3</td>
+                                                        <td>1,459 </td>
+                                                        <td>$225</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Campaign#4</td>
+                                                        <td>5,035 </td>
+                                                        <td>$856</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Campaign#5</td>
+                                                        <td>10,000 </td>
+                                                        <td>$1000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Campaign#5</td>
+                                                        <td>10,000 </td>
+                                                        <td>$1000</td>
+                                                    </tr>
+                                                    <!-- <tr>
+                                                        <td colspan="3">
+                                                            <a href="#" class="btn btn-outline-light float-right">Xem thêm</a>
+                                                        </td>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ============================================================== -->
+                                <!-- end top perfomimg  -->
+                                <!-- ============================================================== -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                             Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="/public/assets/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="/public/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="/public/assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <!-- <script src="/public/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="/public/assets/vendor/charts/morris-bundle/morris.js"></script> -->
+    <!-- chart c3 js -->
+    <script src="/public/assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="/public/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="/public/assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="/public/assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% if(message && message.length > 0){%>
+        <script>
+            toastr.success('<%= message %>','Thông báo', {timeOut: 1500, progressBar: true, closeButton: true});
+        </script>
+    <%} %> 
+</body>
+ 
+</html>

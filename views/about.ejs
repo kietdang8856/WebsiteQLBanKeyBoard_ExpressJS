@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KietCap</title>
+    <link rel="icon" href="/public/img/core-img/favicon.ico">
+    <link rel="stylesheet" href="/public/css/core-style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+    <!-- Main Content Wrapper -->
+    <div class="main-content-wrapper">
+        <!-- About Us Section -->
+        <section class="about-us-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <h2>Welcome to KietCap</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum nisl vel semper pretium.
+                                Nulla facilisi. Duis malesuada eros vel dolor sollicitudin, ut gravida metus malesuada.
+                                Aliquam consectetur finibus augue, a convallis orci ullamcorper a. Proin vehicula
+                                ullamcorper ultricies. In at fringilla lectus, nec bibendum felis. Nullam vel est nec
+                                libero fermentum tincidunt. Suspendisse potenti. Sed sed ultricies justo, a iaculis sapien.
+                                Nullam convallis nec libero eu dapibus. Sed aliquet lacus sed gravida aliquet. Fusce a
+                                tincidunt lorem.
+                            </p>
+                            <p>
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                                Proin mattis, elit sit amet commodo ultrices, dui neque varius odio, vitae finibus quam
+                                velit eu metus. Vivamus sed purus sit amet urna tincidunt iaculis non nec nunc. In hac
+                                habitasse platea dictumst. Maecenas scelerisque ligula quis consectetur dignissim.
+                                Suspendisse a nibh in mauris dapibus finibus. Proin dignissim ipsum ac est maximus, nec
+                                auctor risus vulputate. Mauris quis est sed erat rhoncus auctor nec eget purus. Nullam
+                                in turpis non est vestibulum viverra.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <img src="/public/img/bg-img/IMG_2108.png" alt="About Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Header Area -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/"><img src="/public/img/core-img/logo.png" alt="" /></a>
+            </div>
+            <!-- Amado Nav -->
+            <nav class="amado-nav">
+                <ul>
+                    <li class="active"><a class="btn btn-outline-primary" href="/">Trang chủ</a></li>
+                    <li><a class="btn btn-outline-primary" href="/product">Sản phẩm</a></li>
+                    <li><a class="btn btn-outline-primary" href="/about">Giới thiệu</a></li>
+                    <li><a class="btn btn-outline-primary" href="/about">Hỗ trợ</a></li>
+                    <li><a class="btn btn-outline-primary" href="/about">Liên hệ</a></li>
+
+                    <!-- Phần hiển thị tên người dùng và tùy chọn đăng xuất -->
+                    <li class="nav-item dropdown nav-user">
+                        <% if (customer) { %> <!-- Kiểm tra nếu người dùng đã đăng nhập -->
+                        <!-- Hiển thị thông tin người dùng -->
+                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="<%= customer.avatar %>" alt="" class="user-avatar-md rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                            aria-labelledby="navbarDropdownMenuLink2">
+                            <div class="nav-user-info text-center">
+                                <% var fullName = customer.fullNameCustomer.firstName + " " + customer.fullNameCustomer.lastName %>
+                                <h5 class="mb-0 text-dark nav-user-name"><%= fullName %></h5>
+                                <p class="text-muted"><%= customer.email %></p>
+                            </div>
+                            <a class="dropdown-item text-dark" href="#"><i class="fas fa-user mr-2"></i>Tài khoản</a>
+                            <a class="dropdown-item text-danger" href="/logout"><i class="fas fa-power-off mr-2"></i>Đăng
+                                xuất</a>
+                        </div>
+                        <% } else { %> <!-- Nếu người dùng chưa đăng nhập -->
+                        <!-- Hiển thị nút Đăng nhập -->
+                        <a class="btn btn-outline-primary" href="/login">Đăng nhập</a>
+                        <% } %>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Cart Menu -->
+            <div class="cart-fav-search mb-100">
+                <a href="/cart" class="cart-nav"><img src="/public/img/core-img/cart.png" alt="" /> Giỏ hàng (
+                    <span style="color: #FBB933;"><%= customer ? customer.listProduct.length : 0 %> </span> )</a>
+                <a href="/favorite" class="fav-nav"><img src="/public/img/core-img/favorites.png" alt="" /> Yêu
+                    thích</a>
+                <a href="#" class="search-nav"><img src="/public/img/core-img/search.png" alt="" /> Tìm kiếm</a>
+            </div>
+        </header>
+
+        <!-- Footer Area -->
+        <footer class="footer_area clearfix">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Single Widget Area -->
+                    <div class="col-12 col-lg-4">
+                        <div class="single_widget_area">
+                            <!-- Logo -->
+                            <div class="footer-logo mr-50">
+                                <a href="/"><img src="/public/img/core-img/logo.png" alt="" /></a>
+                            </div>
+                            <!-- Copywrite Text -->
+                            <p class="copywrite">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                All rights reserved | This template is made with
+                                <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                                <a href="https://colorlib.com" target="_blank">Colorlib</a> &
+                                Re-distributed by
+                                <a href="https://themewagon.com/" target="_blank">Themewagon</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Single Widget Area -->
+                    <div class="col-12 col-lg-8">
+                        <div class="single_widget_area">
+                            <!-- Footer Menu -->
+                            <div class="footer_menu">
+                                <nav class="navbar navbar-expand-lg justify-content-end">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#footerNavContent" aria-controls="footerNavContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <i class="fa fa-bars"></i>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="footerNavContent">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="/">Trang chủ</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/product">Sản phẩm</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Hỗ trợ</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">Về chúng tôi</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/public/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/public/js/bootstrap/popper.min.js"></script>
+    <script src="/public/js/bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>

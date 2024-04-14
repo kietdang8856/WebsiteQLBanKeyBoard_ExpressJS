@@ -1,0 +1,48 @@
+<header class="header-area clearfix">
+  <!-- Close Icon -->
+  <div class="nav-close">
+    <i class="fa fa-close" aria-hidden="true"></i>
+  </div>
+  <!-- Logo -->
+  <div class="logo">
+    <a href="/"><img src="/public/img/core-img/logo.png" alt="" /></a>
+  </div>
+  <!-- Amado Nav -->
+  <nav class="amado-nav">
+    <ul>
+      <li class="active"><a class="btn btn-outline-primary" href="/">Trang chủ</a></li>
+      <li><a class="btn btn-outline-primary" href="/product">Sản phẩm</a></li>
+      <li><a class="btn btn-outline-primary" href="/about">Giới thiệu</a></li>
+      <li><a class="btn btn-outline-primary" href="/about">Hỗ trợ</a></li>
+      <li><a class="btn btn-outline-primary" href="/about">Liên hệ</a></li>
+
+      <!-- Phần hiển thị tên người dùng và tùy chọn đăng xuất -->
+      <li class="nav-item dropdown nav-user">
+        <% if (customer) { %> <!-- Kiểm tra nếu người dùng đã đăng nhập -->
+          <!-- Hiển thị thông tin người dùng -->
+          <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="<%= customer.avatar %>" alt="" class="user-avatar-md rounded-circle">
+          </a>
+          <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+            <div class="nav-user-info text-center">
+              <% var fullName = customer.fullNameCustomer.firstName + " " + customer.fullNameCustomer.lastName %> 
+              <h5 class="mb-0 text-dark nav-user-name"><%= fullName %></h5>
+              <p class="text-muted"><%= customer.email %></p>
+            </div>
+            <a class="dropdown-item text-dark" href="#"><i class="fas fa-user mr-2"></i>Tài khoản</a>
+            <a class="dropdown-item text-danger" href="/logout"><i class="fas fa-power-off mr-2"></i>Đăng xuất</a>
+          </div>
+        <% } else { %> <!-- Nếu người dùng chưa đăng nhập -->
+          <!-- Hiển thị nút Đăng nhập -->
+          <a class="btn btn-outline-primary" href="/login">Đăng nhập</a>
+        <% } %>
+      </li>
+    </ul>
+  </nav>
+  <!-- Cart Menu -->
+  <div class="cart-fav-search mb-100">
+    <a href="/cart" class="cart-nav"><img src="/public/img/core-img/cart.png" alt="" /> Giỏ hàng ( <span style="color: #FBB933;"><%= customer ? customer.listProduct.length : 0 %> </span> )</a>
+    <a href="/favorite" class="fav-nav"><img src="/public/img/core-img/favorites.png" alt="" /> Yêu thích</a>
+    <a href="#" class="search-nav"><img src="/public/img/core-img/search.png" alt="" /> Tìm kiếm</a>
+  </div>
+</header>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title  -->
+    <title>KietCap - Đăng nhập</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/public/img/core-img/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/public/assets/libs/css/style.css">
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color:rgb(92, 24, 160);
+    }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="/"><img class="logo-img" src="/public/img/core-img/logo.png" alt="logo"></a><span class="splash-description my-3">Vui lòng nhập thông tin đăng nhập.</span></div>
+            <div class="card-body">
+                <form method="POST" action="/admin/login">
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="username" id="username" type="text" placeholder="Tên tài khoản" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Ghi nhớ đăng nhập</span>
+                        </label>
+                    </div> -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng nhập</button>
+                </form>
+                <div class="card-footer bg-white p-0" style="display: flex;">
+                    <div class="card-footer-item card-footer-item-bordered">
+                        <a href="/forgotpassword" class="footer-link">Quên mật khẩu?</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% if(message && message.length > 0){%>
+        <script>
+            toastr.error('<%= message %>','Thông báo', {timeOut: 1500, progressBar: true, closeButton: true});
+        </script>
+    <%} %> 
+</body>
+ 
+</html>

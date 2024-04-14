@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>KietCap - Đăng ký</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/public/img/core-img/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/public/assets/libs/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+</head>
+<!-- ============================================================== -->
+<!-- signup form  -->
+<!-- ============================================================== -->
+
+<body>
+    <!-- ============================================================== -->
+    <!-- signup form  -->
+    <!-- ============================================================== -->
+    <form class="splash-container" method="POST" action="/sign-up">
+        <div class="card">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" class="card-header">
+                <img class="logo-img mb-3" src="/public/img/core-img/logo.png" alt="logo">
+                <p>Vui lòng nhập thông tin</p>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="firstname" required placeholder="Họ" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="lastname" required placeholder="Tên" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="phone" required placeholder="Số điện thoại" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="cmnd" required placeholder="CMND" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="username" required placeholder="Tên tài khoản" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="email" name="email" required placeholder="E-mail" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="pass1" name="password" type="password" required placeholder="Mật khẩu">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="password" id="pass2" name="repassword" required placeholder="Xác nhận mật khẩu">
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit">Tạo tài khoản</button>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center;" class="card-footer bg-white">
+                <p>Đã có tài khoản? <a href="/login" class="text-secondary ml-2"> Đăng nhập ngay</a></p>
+            </div>
+        </div>
+    </form>
+    <script src="/public/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <% if(message && message.length > 0){%>
+        <script>
+            toastr.error('<%= message %>','Thông báo', {timeOut: 1500, progressBar: true, closeButton: true});
+        </script>
+    <%} %> 
+</body>
+
+ 
+</html>

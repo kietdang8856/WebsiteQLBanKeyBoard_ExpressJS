@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/public/assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link href="/public/assets/vendor/fonts/circular-std/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/public/assets/libs/css/style.css" />
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/fontawesome/css/fontawesome-all.css" />
+    <link rel="stylesheet" href="/public/assets/vendor/charts/chartist-bundle/chartist.css" />
+    <link rel="stylesheet" href="/public/assets/vendor/charts/morris-bundle/morris.css" />
+    <link rel="stylesheet"
+        href="/public/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="/public/assets/vendor/charts/c3charts/c3.css" />
+    <link rel="stylesheet" href="/public/assets/vendor/fonts/flag-icon-css/flag-icon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+        <!-- Title  -->
+    <title>KietCap - Cập nhật đơn hàng</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/public/img/core-img/favicon.ico" />
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/admin/dashboard"><img class="logo-img" src="/public/img/core-img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="<%= customer.avatar %> " alt="" class="user-avatar-md rounded-circle" /></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <% fullName=customer.fullNameCustomer.firstName + " " +
+                                        customer.fullNameCustomer.lastName %>
+                                        <h5 class="mb-0 text-white nav-user-name">
+                                            <%= fullName %>
+                                        </h5>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">Menu</li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-1" aria-controls="submenu-1"><i
+                                        class="fa fa-fw fa-user-circle"></i>Dashboard
+                                    <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu show">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard">Tổng quan</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/categories-manager">Quản lý danh mục</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/products-manager">Quản lý sản phẩm</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Quản lý đơn hàng</a>
+                                            <div id="submenu-1-2" class="collapse submenu show">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/admin/dashboard/pending-orders-manager">Chờ xác nhận</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="/admin/dashboard/orders-manager">Tình trạng đơn hàng</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/admin/dashboard/users-manager">Quản lý người dùng</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Cập nhật đơn hàng</h2>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="#" class="breadcrumb-link">Dashboard</a>
+                                            </li>
+                                            <li class="breadcrumb-item" aria-current="page">
+                                                Quản lý đơn hàng
+                                            </li>
+                                            <li class="breadcrumb-item" aria-current="page">
+                                                Tình trạng đơn hàng
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                Cập nhật thông tin đơn hàng
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content" style="width: 100%; height: 100vh">
+                        <div class="container-fluid">
+                            <form class="row g-3" accept-charset="utf-8" spellcheck="false" action="/admin/dashboard/orders-manager/update/<%= bill._id %> " method="POST">
+                                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                                    <label for="validationServer01" class="form-label">Tên khách hàng:</label>
+                                    <input type="text" name="name" class="form-control" id="validationServer01"
+                                        value="<%= bill.displayName.firstName + ' ' + bill.displayName.lastName%>" required />
+                                </div>
+                                <label for="validationServer01" class="form-label col-12">Địa chỉ nhận hàng:</label>
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <select name="city" class="form-select form-select-sm my-3" style="width: 300px;padding: 10px; outline: none; display: inline-block; color: #71748d; width: -moz-available;" id="city" aria-label=".form-select-sm">
+                                        <option value="none" selected>Chọn tỉnh thành</option>           
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <select name="district" class="form-select form-select-sm my-3" style="width: 300px;padding: 10px; display: inline-block; color: #71748d; width: -moz-available;" id="district" aria-label=".form-select-sm">
+                                        <option value="none" selected>Chọn quận huyện</option>
+                                      </select>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <select name="ward" class="form-select form-select-sm my-3" style="width: 300px;padding: 10px; display: inline-block; color: #71748d; width: -moz-available;" id="ward" aria-label=".form-select-sm">
+                                        <option value="none" selected>Chọn phường xã</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+                                    <label for="validationServer01" class="form-label">Số nhà, tên đường:</label>
+                                    <input type="text" name="address" class="form-control" id="validationServer01"
+                                        value="<%= bill.address.split(',')[0] %>" required />
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-4">
+                                    <label for="validationTooltip04">Trạng thái:</label>
+                                    <select style="color: #71748d;" class="custom-select" name="status" id="validationTooltip04" required>
+                                        <% if(bill.status == 'Đã hủy') {%>
+                                            <option selected value="Đã hủy">Đã hủy</option>
+                                            <option value="Chuẩn bị hàng">Chuẩn bị hàng</option>
+                                            <option value="Đang giao hàng">Đang giao hàng</option>
+                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                        <%} %> 
+                                        <% if(bill.status == 'Chuẩn bị hàng') {%>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                            <option selected value="Chuẩn bị hàng">Chuẩn bị hàng</option>
+                                            <option value="Đang giao hàng">Đang giao hàng</option>
+                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                        <%} %> 
+                                        <% if(bill.status == 'Đang giao hàng') {%>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                            <option value="Chuẩn bị hàng">Chuẩn bị hàng</option>
+                                            <option selected value="Đang giao hàng">Đang giao hàng</option>
+                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                        <%} %>
+                                        <% if(bill.status == 'Đã giao hàng') {%>
+                                            <option value="Đã hủy">Đã hủy</option>
+                                            <option value="Chuẩn bị hàng">Chuẩn bị hàng</option>
+                                            <option value="Đang giao hàng">Đang giao hàng</option>
+                                            <option selected value="Đã giao hàng">Đã giao hàng</option>
+                                        <%} %>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary mt-3" type="submit">
+                                        Cập nhật thông tin đơn hàng
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+
+    <script src="/public/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="/public/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="/public/assets/libs/js/main-js.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="/public/js/address.js"></script>
+</body>
+
+</html>
