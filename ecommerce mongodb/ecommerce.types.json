@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "609138204045f5b26f8c79ab"
+  },
+  "typeName": "Kít Phím",
+  "thumbnail": "/uploads/type01.png",
+  "status": 1
+},
+{
+  "_id": {
+    "$oid": "6091383d4045f5b26f8c79ac"
+  },
+  "typeName": "MODE DESIGNS",
+  "thumbnail": "/uploads/type02.png",
+  "status": 1
+},
+{
+  "_id": {
+    "$oid": "6091384c4045f5b26f8c79ad"
+  },
+  "typeName": "Keycap",
+  "thumbnail": "/uploads/type03.png",
+  "status": 1
+},
+{
+  "_id": {
+    "$oid": "609138654045f5b26f8c79ae"
+  },
+  "typeName": "Switch",
+  "thumbnail": "/uploads/type04.png",
+  "status": 1
+},
+{
+  "_id": {
+    "$oid": "6092aa3a6643fee08ac07055"
+  },
+  "typeName": "Stab",
+  "thumbnail": "/uploads/type05.png",
+  "status": 1
+},
+{
+  "_id": {
+    "$oid": "6092aafc6643fee08ac07057"
+  },
+  "typeName": "Phụ kiện",
+  "thumbnail": "/uploads/type06.png",
+  "status": 1
+}]
