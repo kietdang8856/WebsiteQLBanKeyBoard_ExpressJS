@@ -318,6 +318,27 @@
     <script>
         new FroalaEditor("textarea");
     </script>
+
+<script>
+    // Chờ đến khi trang đã được tải hoàn toàn
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy tham chiếu đến trường nhập liệu số bằng ID
+        const priceInput = document.getElementById('validationServer01');
+
+        // Thêm sự kiện 'input' để kiểm tra giá trị nhập vào
+        priceInput.addEventListener('input', function() {
+            // Lấy giá trị hiện tại của ô nhập liệu và chuyển đổi sang số thực
+            let currentValue = parseFloat(priceInput.value);
+
+            // Kiểm tra nếu giá trị là số âm
+            if (currentValue < 0) {
+                // Đặt lại giá trị của ô nhập liệu thành 0
+                priceInput.value = 0;
+            }
+        });
+    });
+</script>
+    
     <script>
         $(function () {
             $("button[type = 'submit']").click(function () {
