@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "66156eeb0dacf35b3b65e02a"
+  },
+  "fullNameCustomer": {
+    "firstName": "Dang Tuan",
+    "lastName": "Kiet"
+  },
+  "dateOfBirth": "08/03/1999",
+  "identityCardNumber": "11111111",
+  "address": "Bình Tân - Vĩnh Long",
+  "phoneNumber": "11111111111",
+  "email": "1111@gmail.com",
+  "loginInformation": {
+    "userName": "admin",
+    "password": "admin",
+    "type": "Admin",
+    "roles": [
+      "All"
+    ]
+  },
+  "avatar": "/uploads/test.png"
+}]

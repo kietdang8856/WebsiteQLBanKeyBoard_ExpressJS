@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "661b017d717521285057c8d2"
+  },
+  "listProduct": [
+    {
+      "productID": "60929e4d6ce96574b4508dc8",
+      "productName": "Artisan Lobo Frieren / Fern",
+      "productPrice": "200000",
+      "productImage": "/uploads\\fern.png",
+      "amount": "1"
+    },
+    {
+      "productID": "60929e4d6ce96574b4508dc9",
+      "productName": "KKB Moon Rabbit Keycap Set",
+      "productPrice": "2100000",
+      "productImage": "/uploads\\Envoy_Accent.png",
+      "amount": 4
+    },
+    {
+      "productID": "60929e4d6ce96574b4508dcd",
+      "productName": "JTK HSA Rays Keycap Set",
+      "productPrice": "2150000",
+      "productImage": "/uploads\\Avostar.png",
+      "amount": "1"
+    },
+    {
+      "productID": "6098b821bd0c2c1b8fc81479",
+      "productName": "Switch Zouce Lavender | Linear 53g | Công tắc bàn phím cơ | TKS",
+      "productPrice": "8000",
+      "productImage": "/uploads\\Zouce.png",
+      "amount": 1
+    }
+  ],
+  "listFavorite": [
+    {
+      "_id": {
+        "$oid": "60929e4d6ce96574b4508dcc"
+      },
+      "productName": "Game 1989 Keycap Set",
+      "description": {
+        "imageList": [
+          "/uploads\\Game1989.png"
+        ],
+        "productDescription": "<p style=\"margin-bottom: 1rem; color: rgb(58, 68, 94); font-family: Roboto, sans-serif; font-size: 16px;\"><span style=\"font-size: 15px;\">Chất liệu: Gỗ&nbsp;</span><br style=\"font-size: 15px;\"><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">K&iacute;ch thước:&nbsp;</span><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">Chiều rộng&nbsp;:&nbsp;45 cm</span><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">Độ s&acirc;u&nbsp;:&nbsp;39 cm</span><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">Chiều cao&nbsp;:&nbsp;50 cm</span><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">Tối đa&nbsp;tải&nbsp;:&nbsp;100 kg</span><br style=\"font-size: 15px;\"><br style=\"font-size: 15px;\"><br style=\"font-size: 15px;\"><span style=\"font-size: 15px; color: rgb(72, 72, 72);\">Một chiếc ghế đẩu gi&uacute;p bạn dễ d&agrave;ng lấy những thứ m&agrave; bạn cất ở tr&ecirc;n cao.</span><br style=\"font-size: 15px;\"><span style=\"font-size: 15px;\">Thật th&ocirc;ng minh khi cất những thứ ở tr&ecirc;n cao - nhưng đ&ocirc;i khi rất kh&oacute; để lấy ch&uacute;ng.&nbsp;Ghế đẩu ở bước n&agrave;y gi&uacute;p bạn dễ d&agrave;ng lấy những thứ cao nhất trong tủ - v&agrave; nh&igrave;n n&oacute; cũng rất đẹp</span></p>",
+        "price": "2200000",
+        "unit": "Cái",
+        "supplierCode": "609142114045f5b26f8c79b0",
+        "typeCode": "6091383d4045f5b26f8c79ac",
+        "status": true
+      },
+      "discount": {
+        "state": "none",
+        "discountPercent": 0,
+        "startDate": "04/05/2021",
+        "endDate": "10/05/2021"
+      },
+      "rating": {
+        "purchase": 0,
+        "commentAndVote": []
+      }
+    }
+  ],
+  "fullNameCustomer": {
+    "firstName": "1",
+    "lastName": "1"
+  },
+  "dateOfBirth": null,
+  "sex": null,
+  "identityCardNumber": "1",
+  "address": null,
+  "phoneNumber": "1",
+  "email": "1@gmail.com",
+  "loginInformation": {
+    "userName": "1",
+    "password": "$2a$10$8MNMch8kTql9DUGs96MlEOy41Z5UR57nPZlcY2o/0iUjfjCyKNMPu",
+    "type": "User",
+    "roles": []
+  },
+  "avatar": "/uploads/user-01.png"
+},
+{
+  "_id": {
+    "$oid": "661b0c4848d0883e1caf2b7b"
+  },
+  "listProduct": [],
+  "listFavorite": [],
+  "fullNameCustomer": {
+    "firstName": "Kiet",
+    "lastName": "Kiet"
+  },
+  "dateOfBirth": null,
+  "sex": null,
+  "identityCardNumber": "123123123123",
+  "address": null,
+  "phoneNumber": "+84794269283",
+  "email": "diodangkiet@gmail.com",
+  "loginInformation": {
+    "userName": "diodangkiet",
+    "password": "$2a$10$sooByuiRLzC25mCVvMdufe2RKomBXFMMBX2LuYwjKBHo94Eil/fJK",
+    "type": "User",
+    "roles": []
+  },
+  "avatar": "/uploads/user-01.png"
+},
+{
+  "_id": {
+    "$oid": "661b8f3f8ca70a279cfb771d"
+  },
+  "loginInformation": {
+    "type": "User",
+    "userName": "kiet",
+    "password": "$2a$10$LAiTS6PtTNHIOJnYnBiZi.1KvF8zsK8RNiRcFKjkOzb6ruDK51tRe"
+  },
+  "listProduct": [],
+  "listFavorite": [],
+  "fullNameCustomer": {
+    "firstName": "Kiet",
+    "lastName": "Kiet"
+  },
+  "dateOfBirth": null,
+  "sex": null,
+  "identityCardNumber": "kiet",
+  "address": null,
+  "phoneNumber": "kiet",
+  "email": "kiet@gmail.com",
+  "avatar": "/uploads/user-01.png"
+},
+{
+  "_id": {
+    "$oid": "661b92724a8a23221856039a"
+  },
+  "loginInformation": {
+    "type": "User",
+    "userName": "2",
+    "password": "$2a$10$6jCEnnv4tD/c4h6ZGC7CMuEReFZ1o84GoGpdcX11UjiN4hNqPpI8a"
+  },
+  "listProduct": [],
+  "listFavorite": [],
+  "fullNameCustomer": {
+    "firstName": "2",
+    "lastName": "2"
+  },
+  "dateOfBirth": null,
+  "sex": null,
+  "identityCardNumber": "2",
+  "address": null,
+  "phoneNumber": "2",
+  "email": "2@gmail.com",
+  "avatar": "/uploads/user-01.png"
+}]
