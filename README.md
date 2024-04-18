@@ -29,3 +29,15 @@ npm install express mongoose bcrypt nodemailer jsonwebtoken passport connect-fla
 npm start
 ```
 
+## Một số giao diện Website
+
+- Giao diện người dùng
+- Giao diện admin
+- Giao diện login
+
+![Giao diện người dùng](uploads/GiaoDien1.png)
+![Giao diện admin](uploads/GiaoDien2.png)
+![Giao diện admin](uploads/GiaoDien3.png)
+![Giao diện login](uploads/GiaoDien4.png)
+
+
